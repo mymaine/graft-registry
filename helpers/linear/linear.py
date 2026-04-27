@@ -21,7 +21,9 @@ _URL = "https://api.linear.app/graphql"
 
 
 def _headers() -> dict[str, str]:
-    return {"Authorization": auth("linear") or "", "Content-Type": "application/json"}
+    if (key := auth("linear")) is None:
+        raise RuntimeError("linear token missing: configure .graft/auth.toml or GRAFT_LINEAR_TOKEN")
+    return {"Authorization": key, "Content-Type": "application/json"}
 
 
 def _post(query: str, variables: dict[str, Any]) -> dict[str, Any]:
