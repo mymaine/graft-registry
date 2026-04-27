@@ -65,17 +65,19 @@ hyphens, no dots). CI rejects anything else.
 
 ## Step 2: Write `manifest.json` entry
 
-Add an entry under `services` in the top-level `manifest.json`. Required
-fields and constraints (CI enforces these):
+Add an entry under `services` in the top-level `manifest.json`. Fields
+marked ✓ in the **CI** column are hard-enforced — PR fails without them.
+The rest are recommended (they shape user-side index output and future
+registry search) but won't block your PR.
 
-| Field | Constraint |
-|---|---|
-| `version` | semver string (e.g. `"0.1.0"`) |
-| `path` | `"helpers/<svc>/<svc>.py"` — must not start with `/`, must not contain `..` |
-| `description` | one human-readable sentence; non-empty |
-| `summary_for_index` | <= 60 chars, lands in user-side `helpers/INDEX.md` |
-| `auth_required` | `true` if helper needs a credential; `false` otherwise |
-| `tags` | free-form list, used for future search |
+| Field | CI | Constraint |
+|---|---|---|
+| `version` | ✓ | semver string (e.g. `"0.1.0"`) |
+| `path` | ✓ | `"helpers/<svc>/<svc>.py"` — must not start with `/`, must not contain `..` |
+| `description` | ✓ | one human-readable sentence; non-empty |
+| `summary_for_index` | — | <= 60 chars, lands in user-side `helpers/INDEX.md` |
+| `auth_required` | — | `true` if helper needs a credential; `false` otherwise |
+| `tags` | — | free-form list, used for future search |
 
 The service key itself (the thing under `"services": { ... }`) must satisfy
 Python's `str.isidentifier()`. CI checks this — `my-svc` and `123svc` both
