@@ -8,6 +8,14 @@
       "summary_for_index": "httpbin echo (dogfood)",
       "auth_required": false,
       "tags": ["dogfood", "test"]
+    },
+    "github": {
+      "version": "0.1.0",
+      "path": "helpers/github/github.py",
+      "description": "GitHub REST API: list/get repo, list issues + pulls, search code, open issues",
+      "summary_for_index": "GitHub REST (5 helpers)",
+      "auth_required": true,
+      "tags": ["dev", "vcs", "official"]
     }
   }
 }
