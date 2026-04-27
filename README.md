@@ -26,6 +26,18 @@ graft add echo
 No server, no package index, no auth token to publish. The registry is just
 a git repo.
 
+## Available services
+
+| Service | What it covers | Auth | Functions |
+|---|---|---|---|
+| `echo` | httpbin.org echo (dogfood / pipeline test) | none | `echo_get`, `echo_post` |
+| `github` | GitHub REST: list/get repo, list issues + pulls, search code, open issues | PAT (`ghp_...`) | 5 |
+| `linear` | Linear GraphQL: list/get issues, list teams, create issue | API key (`lin_api_...`) | 4 |
+| `notion` | Notion API: list/get pages, read blocks, query databases, append content | integration token (`secret_...`) | 5 |
+| `stripe` | Stripe: list/get charges + customers, create customer | secret key (`sk_test_...` / `sk_live_...`) | 5 |
+
+Pull any of them with `graft add <service>`. Each helper is a single Python file ≤ 80 SLOC — read the source to learn what's covered and extend it directly in your `helpers/<service>.py` once installed.
+
 ## Repository layout
 
 ```
