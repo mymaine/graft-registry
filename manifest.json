@@ -16,6 +16,30 @@
       "summary_for_index": "GitHub REST (5 helpers)",
       "auth_required": true,
       "tags": ["dev", "vcs", "official"]
+    },
+    "linear": {
+      "version": "0.1.0",
+      "path": "helpers/linear/linear.py",
+      "description": "Linear GraphQL: list/get issues, list teams, create issue",
+      "summary_for_index": "Linear GraphQL (4 helpers)",
+      "auth_required": true,
+      "tags": ["dev", "issues", "official"]
+    },
+    "notion": {
+      "version": "0.1.0",
+      "path": "helpers/notion/notion.py",
+      "description": "Notion API: list/get pages, read blocks, query databases, append content",
+      "summary_for_index": "Notion API (5 helpers)",
+      "auth_required": true,
+      "tags": ["docs", "knowledge", "official"]
+    },
+    "stripe": {
+      "version": "0.1.0",
+      "path": "helpers/stripe/stripe.py",
+      "description": "Stripe API: list/get charges + customers, create customer",
+      "summary_for_index": "Stripe API (5 helpers)",
+      "auth_required": true,
+      "tags": ["payments", "saas", "official"]
     }
   }
 }
