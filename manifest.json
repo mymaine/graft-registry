@@ -1,0 +1,13 @@
+{
+  "$schema_version": "1",
+  "services": {
+    "echo": {
+      "version": "0.1.0",
+      "path": "helpers/echo/echo.py",
+      "description": "httpbin.org echo for dogfooding the graft pipeline (GET + JSON POST)",
+      "summary_for_index": "httpbin echo (dogfood)",
+      "auth_required": false,
+      "tags": ["dogfood", "test"]
+    }
+  }
+}
