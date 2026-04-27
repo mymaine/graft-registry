@@ -2,7 +2,7 @@
 
 A community git registry of graft helpers — pure git, no server.
 
-[graft](https://github.com/maine/graft) is a thin Python harness that lets
+[graft](https://github.com/mymaine/graft) is a thin Python harness that lets
 agents (Claude Code, Codex, etc.) accumulate HTTP API capabilities as plain
 `helpers/<service>.py` files. This repository is the shared pool that
 `graft add <service>` pulls from.
@@ -80,7 +80,7 @@ other), `python_version` (registry tracks graft's own >= 3.11), and
 1. Fork this repo.
 2. Add a directory `helpers/<service>/` with `<service>.py` and `README.md`.
 3. Write the helper following graft's
-   [SKILL.md design principles](https://github.com/maine/graft/blob/main/src/graft/templates/SKILL.md):
+   [SKILL.md design principles](https://github.com/mymaine/graft/blob/main/src/graft/templates/SKILL.md):
    - Hardcode the service identity (base URL, auth scheme).
    - Parameterize anything that varies between calls.
    - Every public function gets a `Generalization:` docstring section.
